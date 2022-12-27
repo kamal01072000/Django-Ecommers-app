@@ -1,0 +1,33 @@
+<html>
+{% extends 'eapp/main.html' %}
+{% block title %}
+collections
+{% endblock title %}
+
+
+
+{% block content %}
+<section class="bg light py-4 my-5">
+    <div class="container">
+        <div class=" row">
+            <div class="col-12">
+                <h4 class="mb-3">{{collc_det.name}} Detailes</h4>
+                <hr style="border-color: rgb(144, 250, 215);">
+            </div>
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{%url 'home'%}">Home</a></li>
+                  
+                  <li class="breadcrumb-item active" aria-current="page">{{collc_det.name}}</li>
+                </ol>
+              </nav>
+        <div class="container">
+        {{collc_det.name}}
+        <img src="{{collc_det.product_images.url}} " class="card-image-top" alt=" image">
+        {{collc_det.discription}}
+
+    </div>  
+
+</section>
+{% endblock content %}
+</html>

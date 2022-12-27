@@ -1,0 +1,21 @@
+.carousel-item img {
+    width: 70vw;
+    height: 50vh;
+    object-fit: cover;
+    object-position: 50% 30%;
+    overflow: hidden;
+}
+
+.old_price {
+    font-weight: bold;
+    color: rgb(234, 9, 9);
+    background-color: azure;
+
+     
+}
+
+.new_price {
+    color: rgb(7, 255, 65);
+    font-weight: bold;
+
+}

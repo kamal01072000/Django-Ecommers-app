@@ -1,0 +1,43 @@
+<html>
+{% extends 'eapp/main.html' %}
+{% block title %}
+collections
+{% endblock title %}
+
+
+
+{% block content %}
+<section class="bg light py-4 my-5">
+    <div class="container">
+        <div class=" row">
+            <div class="col-12">
+                <h4 class="mb-3">{{collc_name}}products</h4>
+                <hr style="border-color: rgb(144, 250, 215);">
+            </div>
+            {%for item in prod%}
+    <div class="container">
+        <!-- <div class="col-md-8 px-4"> -->
+            <div class=" col-md-4 col-lg-3">
+                <div class=" card my-3">
+                    <img src="{{item.product_images.url}} " class="card-image-top" alt=" image">
+                    <a href="{%url 'collection_detailes' collc_name item.name %}">
+                    <div class="card-body">
+                        <h5 class="card-title-primary">{{item.name}} </h5>
+                        <p class=" card-test">
+                            <span class="float-start old_price"> <s>Rs.{{item.orginal_price | stringformat:'d'}}</s></span>
+                            <span class="float-end new_price">Rs.{{item.selling_price | stringformat:'d'}}</span>
+                        </p>
+                        {% comment %} <a href="{%url 'collection_detailes' collc_name item.name %}" class="btn btn-primary btn-sn"> view detail</a> {% endcomment %}
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+            
+{% endfor %}
+
+</section>
+{% endblock content %}
+</html>
